@@ -1,0 +1,1 @@
+# dashboard login doesnt work even though the bearer token is correct. Need to find a way to serve dasboard over HTTPs

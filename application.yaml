@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubia-deployment
+  labels:
+    app: kubia-deployment
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kubia-deployment
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: kubia-deployment
+    spec:
+      containers:
+      - image: falimonda/kubia:latest
+        imagePullPolicy: Always
+        name: kubia-deployment
+        ports:
+        - containerPort: 8080
+          protocol: TCP
