@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "SERVICES"
+echo
+kubectl get services
+echo
+echo
+echo "DEPLOYMENTS"
+echo
+kubectl get deploy
+echo
+echo
+echo "PODS"
+echo
+kubectl get pods
+echo
